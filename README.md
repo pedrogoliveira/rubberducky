@@ -441,7 +441,7 @@ avrdude done.  Thank you.
 
 ### Adding Digispark
 
-Before you begin with digispark, remember that if you bought any clone, tou must ensure that it has micronucleus bootloader installed. If not, read my adventure burning micronucleus in a digispark clone with arduino as a ISP.
+Before we begin with digispark, remember that if we bought any clone of digispark, we must ensure that it has micronucleus bootloader installed. If not, read my adventure burning micronucleus in a digispark clone with arduino as a ISP.
 
 ```sh
 pio init --board digispark-tiny
