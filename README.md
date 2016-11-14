@@ -185,6 +185,7 @@ To begin with a new project, all you have to do is create a new empty folder and
 You can start with several boards from the begining or you just start with one board and add other boards whenever you want.
 
 ##### Starting with arduino uno board
+![uno](https://github.com/pedrogoliveira/rubberducky/raw/master/images/uno.png)
 In my example, I'll just begin with arduino uno, make some tests and after that, with attiny digispark board.
 
 ***Initialize blink_led project***
