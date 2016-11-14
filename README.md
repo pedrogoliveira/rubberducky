@@ -1,6 +1,6 @@
 # Digispark Rubber Ducky with PlatformIO
 
-[![N|Solid](http://cdn.platformio.org/images/platformio-logo.17fdc3bc.png)](http://platformio.org/)
+![N|Solid](http://cdn.platformio.org/images/platformio-logo.17fdc3bc.png)](http://platformio.org/)
 ![Digispark_attiny](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_1.jpg)
 ## Installing PlatformIO
 Follow install procedure at http://docs.platformio.org/en/stable/installation.html
