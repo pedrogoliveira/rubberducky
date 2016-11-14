@@ -1,7 +1,7 @@
 # Digispark Rubber Ducky with PlatformIO
 
 [![N|Solid](http://cdn.platformio.org/images/platformio-logo.17fdc3bc.png)](http://platformio.org/)
-
+![Digispark_attiny](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny.png)
 ## Installing PlatformIO
 Follow install procedure at http://docs.platformio.org/en/stable/installation.html
 Fedora 24 users, must fix an issue related with libncurses. Avrdude installed with PlatformIO relyes on a different version of linbsurses. To fix this issue, execute this steps after you finish creating your first project (runing platformio init for the firts time). 
