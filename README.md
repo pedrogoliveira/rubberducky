@@ -4,7 +4,7 @@
 ![Digispark_attiny](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_1.jpg)
 ## Installing PlatformIO
 Follow install procedure at http://docs.platformio.org/en/stable/installation.html
-Fedora 24 users, must fix an issue related with libncurses. Avrdude installed with PlatformIO relyes on a different version of linbsurses. To fix this issue, execute this steps after you finish creating your first project (runing platformio init for the firts time). 
+Fedora 24 users, must fix an issue related with libncurses. Avrdude installed with PlatformIO relies on a different version of linbsurses. To fix this issue, execute this steps after you finish creating your first project (runing platformio init for the firts time). 
 
 ```sh
 $ dnf install avrdude-6.1-5.fc24.x86_64
