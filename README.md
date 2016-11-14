@@ -442,6 +442,7 @@ avrdude done.  Thank you.
 
 ### Adding Digispark
 ![Digispark_attiny_detail](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_detail.png)
+
 Before we begin with digispark, remember that if we bought any clone of digispark, we must ensure that it has micronucleus bootloader installed. If not, read my adventure burning micronucleus in a digispark clone with arduino as a ISP.
 
 ```sh
