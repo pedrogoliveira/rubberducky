@@ -380,6 +380,8 @@ $ mv ~/.platformio/packages/toolchain-atmelavr/bin/avrdude ~/.platformio/package
 $ ln -s /usr/bin/avrdude ~/.platformio/packages/toolchain-atmelavr/bin/avrdude
 ```
  
+***Back to PlatformIO***
+
 As we can see, PlatformIO autodetects the uno board usb port in use.
 We can check it usin the following:
 ```sh
