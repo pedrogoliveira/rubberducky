@@ -4,15 +4,6 @@
 ![Digispark_attiny](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_1.jpg)
 ## Installing PlatformIO
 Follow install procedure at http://docs.platformio.org/en/stable/installation.html
-Fedora 24 users, must fix an issue related with libncurses. Avrdude installed with PlatformIO relies on a different version of libncurses. To fix this issue, execute this steps after you finish creating your first project (running platformio init for the first time). 
-
-```sh
-$ dnf install avrdude-6.1-5.fc24.x86_64
-$ mv ~/.platformio/packages/tool-avrdude/avrdude ~/.platformio/packages/tool-avrdude/avrdude.bck
-$ ln -s /usr/bin/avrdude ~/.platformio/packages/tool-avrdude/avrdude
-$ mv ~/.platformio/packages/toolchain-atmelavr/bin/avrdude ~/.platformio/packages/toolchain-atmelavr/bin/avrdude.bck
-$ ln -s /usr/bin/avrdude ~/.platformio/packages/toolchain-atmelavr/bin/avrdude
-```
 
 ### Testing Platformio Installation
 
@@ -373,6 +364,22 @@ avrdude done.  Thank you.
 
 ========================= [SUCCESS] Took 2.37 seconds =========================
 ```
+***Note (Fedora 24 users):*** If you get errors with avrdude, probably you must fix an issue related with libncurses. Avrdude installed with PlatformIO relies on a different version of libncurses. To fix this issue, execute this steps after you finish creating your first project (running platformio init for the first time). 
+
+```sh
+$ dnf install avrdude-6.1-5.fc24.x86_64
+```
+then
+```sh
+$ mv ~/.platformio/packages/tool-avrdude/avrdude ~/.platformio/packages/tool-avrdude/avrdude.bck
+$ ln -s /usr/bin/avrdude ~/.platformio/packages/tool-avrdude/avrdude
+```
+and / or
+```sh
+$ mv ~/.platformio/packages/toolchain-atmelavr/bin/avrdude ~/.platformio/packages/toolchain-atmelavr/bin/avrdude.bck
+$ ln -s /usr/bin/avrdude ~/.platformio/packages/toolchain-atmelavr/bin/avrdude
+```
+ 
 As we can see, PlatformIO autodetects the uno board usb port in use.
 We can check it usin the following:
 ```sh
@@ -445,6 +452,33 @@ avrdude done.  Thank you.
 
 Before we begin with digispark, remember that if we bought any clone of digispark, we must ensure that it has micronucleus bootloader installed. If not, read my adventure burning micronucleus in a digispark clone with arduino as a ISP.
 
+***Note:*** Ubuntu, Fedora and other Linux distibutions use udev to manage device files when USB devices are added and removed. By default, udev will create a device with read-only permission which will not allow to you download code. You must place the udev rules below into a file named /etc/udev/rules.d/49-micronucleus.rules
+
+```sh
+# UDEV Rules for Micronucleus boards including the Digispark.
+# This file must be placed at:
+#
+# /etc/udev/rules.d/49-micronucleus.rules    (preferred location)
+#   or
+# /lib/udev/rules.d/49-micronucleus.rules    (req'd on some broken systems)
+#
+# After this file is copied, physically unplug and reconnect the board.
+#
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="0753", MODE:="0666"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="0753", MODE:="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
+#
+# If you share your linux system with other users, or just don't like the
+# idea of write permission for everybody, you can replace MODE:="0666" with
+# OWNER:="yourusername" to create the device owned by you, or with
+# GROUP:="somegroupname" and mange access using standard unix groups.
+```
+after saving this file,
+
+```sh
+$ sudo udevadm control --reload-rules
+```
+
+Returning to our pio project,
 ```sh
 pio init --board digispark-tiny
 ```
