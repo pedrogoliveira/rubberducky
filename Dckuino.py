@@ -311,10 +311,10 @@ void setup()
     // Ending stream
     Keyboard.end();
 
-    }\n\n'
+    }
 
 /* Unused endless loop */
-void loop() {}';
+void loop() {};
 """
 
     return strHeader + parsedDucky + strFooter
