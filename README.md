@@ -11,7 +11,7 @@ If you have already installed platformio, have an original digispark module or a
 1. Create a new folder and copy ***Digiducky.py*** and make it executable
 2. Init the project with platformio
 3. Create your rubber ducky payload
-4. run ***Digiducky.py*** with option -k for portuguese keyboard layout
+4. run ***Digiducky.py*** with option ***-k PT*** to emulate a portuguese keyboard
 5. Compile and upload with platformio
 
 ***Example using a linux box***
