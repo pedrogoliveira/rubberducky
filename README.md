@@ -6,8 +6,7 @@
 
 ## Howto for lazy people
 
-If you have already installed platformio, have a origininal digispark module or any clone with micronucleus bootloader installed 
-and you are as lazy as i am, this steps are for you.
+If you have already installed platformio, have an original digispark module or any clone with micronucleus bootloader and you are as lazy as i am, this litle howto is made for you.
 
 1. Create a new folder and copy ***Digiducky.py*** and make it executable
 2. Init the project with platformio
@@ -28,6 +27,7 @@ $ pio run -e digispark-tiny -t upload
 every time you need to change your payload, just run 2 last steps.
 
 That's It. Enjoy!
+
 If you wanto to know a litle more, continue reading ...
 
 ## Installing PlatformIO
