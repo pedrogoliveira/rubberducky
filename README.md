@@ -28,7 +28,7 @@ every time you need to change your payload, just run 2 last steps.
 
 That's It. Enjoy!
 
-If you wanto to know a litle more, continue reading ...
+If you want to know a litle more, continue reading ...
 
 ## Installing PlatformIO
 Follow install procedure at http://docs.platformio.org/en/stable/installation.html
