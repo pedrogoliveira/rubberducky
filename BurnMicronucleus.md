@@ -44,7 +44,7 @@ Don't forget the 10uF capacitor between GND and RESET arduino pins.
 
 ## Burning micronucleus bootloader
 
-Connect again your arduino uno board to usb and follow these steps:
+Connect again your arduino uno board to your computer usb port and follow these steps:
 
 ```sh
 $ wget https://github.com/Bluebie/micronucleus/raw/master/firmware/releases/micronucleus-1.06.hex
