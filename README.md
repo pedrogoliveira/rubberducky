@@ -6,7 +6,7 @@
 
 ## Howto for lazy people
 
-If you have already installed platformio, have an original digispark module or any clone with micronucleus bootloader and you are as lazy as i am, this litle howto is made for you.
+If you have already installed platformio, have an original digispark module or any clone with micronucleus bootloader and you are as lazy as i am, this litle howto is made for you. If your attiny don't have micronucleus, take a look [here](https://github.com/pedrogoliveira/rubberducky/blob/master/BurnMicronucleus.md).
 
 1. Create a new folder and copy ***Digiducky.py*** and make it executable
 2. Init the project with platformio
