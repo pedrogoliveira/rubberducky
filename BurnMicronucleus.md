@@ -48,6 +48,8 @@ Connect again your arduino uno board to your computer usb port and follow these 
 
 ```sh
 $ wget https://github.com/Bluebie/micronucleus/raw/master/firmware/releases/micronucleus-1.06.hex
-$ avrdude -c arduino -b 19200 -P /dev/ttyACM0 -p t85 -U flash:w:micronucleus-1.06.hex -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m$ 
+$ avrdude -c arduino -b 19200 -P /dev/ttyACM0 -p t85 -U flash:w:micronucleus-1.06.hex -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m
 ```
+In my case, arduino serial connection was mapped to /dev/ttyACM0. You can check this with dmesg.
+
 That's all!
