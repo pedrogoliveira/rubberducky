@@ -24,7 +24,7 @@ $ wget https://github.com/pedrogoliveira/rubberducky/raw/master/payload.txt
 $ ./Digiducky.py -i payload.txt -o src/main.cpp -k PT
 $ pio run -e digispark-tiny -t upload
 ```
-every time you need to change your payload, just run 2 last steps.
+every time you need to change your payload, just run the last 2 steps.
 
 That's It. Enjoy!
 
