@@ -1,4 +1,4 @@
-# Burn micronucleus bootloader
+# Burn micronucleus bootloader in 3 steps
 
 [![Platformio](http://cdn.platformio.org/images/platformio-logo.17fdc3bc.png)](http://platformio.org/)
 ![Digispark_attiny](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_1.jpg)
@@ -10,7 +10,7 @@ This is a simple howto for burning micronucleus bootloader to attiny85 using Ard
 The Digispark runs the “micronucleus tiny85” bootloader version 1.02, an open source project originally written by [Bluebie](https://github.com/Bluebie).
 We are going to use the arduino uno running ArduinoISP program to act as an avr programmer. 
 
-## Preparing Arduino uno
+## 1 - Prepare your Arduino uno
 
 In this stage, you are going to upload the ArduinoISP program to your uno board. You can find this PlatfotmIO project [here](https://github.com/pedrogoliveira/rubberducky/tree/master/ArduinoISP). The **main.cpp** file is a copy of ***ArduinoISP.ino*** with a slight modification in order to compile. (lines 162-167).
 
@@ -20,7 +20,7 @@ $ git clone https://github.com/pedrogoliveira/rubberducky
 $ cd rubberducky/ArduinoISP
 $ pio run -e uno -t upload
 ```
-## Connecting Digispark attiny85 to uno board
+## 2 - Connect Digispark attiny85 to uno board
 
 Connect elements acording to this 3 pictures. 
 
@@ -42,7 +42,7 @@ Don't forget the 10uF capacitor between GND and RESET arduino pins.
 
 ![Digispark_attiny_detail](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_detail.png)
 
-## Burning micronucleus bootloader
+## 3 - Burning micronucleus bootloader
 
 Connect again your arduino uno board to your computer usb port and follow these steps:
 
