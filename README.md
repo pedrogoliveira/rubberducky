@@ -28,7 +28,7 @@ every time you need to change your payload, just run 2 last steps.
 
 That's It. Enjoy!
 
-If you want to know a litle more, continue reading [here](https://github.com/pedrogoliveira/rubberducky/blob/master/DigiduckyPIO.md)...
+If you want to know a little more, continue reading [here](https://github.com/pedrogoliveira/rubberducky/blob/master/DigiduckyPIO.md)...
 
 
 
