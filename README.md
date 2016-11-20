@@ -88,7 +88,7 @@ Home: http://platformio.org/platforms/atmelavr
 Packages: framework-arduinoavr, tool-micronucleus, toolchain-atmelavr, tool-avrdude, tool-scons
 Version: 1.1.0
 ```
-***Show details from an installed platform***
+***Show details about installed platform***
 ```sh
 $ pio platforms show atmelavr
 ```
