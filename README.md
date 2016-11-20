@@ -480,7 +480,7 @@ avrdude done.  Thank you.
 ### Adding Digispark
 ![Digispark_attiny_detail](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_detail.png)
 
-Before we begin with digispark, remember that if we bought any clone of digispark, we must ensure that it has micronucleus bootloader installed. If not, read my adventure burning micronucleus in a digispark clone with arduino as a ISP.
+Before we begin with digispark, remember that if we bought any clone of digispark, we must ensure that it has micronucleus bootloader installed. If not, read my adventure [burning micronucleus in a digispark clone with arduino as a ISP](https://github.com/pedrogoliveira/rubberducky/blob/master/BurnMicronucleus.md).
 
 ***Note:*** Ubuntu, Fedora and other Linux distibutions use udev to manage device files when USB devices are added and removed. By default, udev will create a device with read-only permission which will not allow to you download code. You must place the udev rules below into a file named /etc/udev/rules.d/49-micronucleus.rules
 
