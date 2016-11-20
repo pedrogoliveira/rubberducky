@@ -26,4 +26,19 @@ Connect elements acording to this 3 pictures.
 
 ![Attiny_arduino](https://github.com/pedrogoliveira/rubberducky/raw/master/images/attiny-arduino-ligacao-282x380.jpg)
 ![Attiny_esquema](https://github.com/pedrogoliveira/rubberducky/raw/master/images/attiny85-esquema_en.jpg)
+
+```sh
+Digispark     ATTINY85     UNO
+----------------------------------
+   5v    <-->  PIN 5  <--> Vcc +5v
+  GND    <-->  PIN 4  <--> GND
+   P0    <-->  PIN 8  <--> 11
+   P1    <-->  PIN 7  <--> 12
+   P2    <-->  PIN 6  <--> 13
+   P5    <-->  PIN 1  <--> 10
+   
+```
+Don't forget the 10uF capacitor between GND and RESET arduino pins.
+
 ![Digispark_attiny_detail](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_detail.png)
+
