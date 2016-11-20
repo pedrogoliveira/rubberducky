@@ -42,3 +42,12 @@ Don't forget the 10uF capacitor between GND and RESET arduino pins.
 
 ![Digispark_attiny_detail](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_detail.png)
 
+## Burning micronucleus bootloader
+
+Connect again your arduino uno board to usb and follow these steps:
+
+```sh
+$ wget https://github.com/Bluebie/micronucleus/raw/master/firmware/releases/micronucleus-1.06.hex
+$ avrdude -c arduino -b 19200 -P /dev/ttyACM0 -p t85 -U flash:w:micronucleus-1.06.hex -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m$ 
+```
+That's all!
