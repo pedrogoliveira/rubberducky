@@ -42,7 +42,7 @@ Don't forget the 10uF capacitor between GND and RESET arduino pins.
 
 ![Digispark_attiny_detail](https://github.com/pedrogoliveira/rubberducky/raw/master/images/digispark_attiny_detail.png)
 
-## 3 - Burning micronucleus bootloader
+## 3 - Upload micronucleus bootloader
 
 Connect again your arduino uno board to your computer usb port and follow these steps:
 
