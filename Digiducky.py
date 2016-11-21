@@ -316,16 +316,24 @@ void typeKey(uint8_t key)
 /* ------------- */
 /* Init function */
 /* ------------- */
+
 void setup()
+
 {
+
     DigiKeyboard.update();
+
     delay(1000);
-    DigiKeyboard.update();
+
+    DigiKeyboard.sendKeyStroke(0); // Clean any key state. Release all
+
     delay(100);
+
 """
     strFooter = """
 
     }
+    
 /* Unused endless loop */
 void loop() {};
 """
