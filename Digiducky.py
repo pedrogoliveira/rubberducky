@@ -10,9 +10,6 @@ kb_layout_dict = {
 commandMap = {
     'ESCAPE':'KEY_LEFT_ESC',
     'ESC':'KEY_LEFT_ESC',
-    'GUI':'MOD_GUI_LEFT',
-    'WINDOWS':'MOD_GUI_LEFT',
-    'COMMAND':'MOD_GUI_LEFT',
     'MENU':'229',
     'APP':'229',
     'END':'KEY_END',
@@ -48,11 +45,13 @@ commandMap = {
     'PAGEDOWN':'KEY_PAGE_DOWN'
     }
 comboMap = {
-
     'ALT':'MOD_ALT_LEFT',
     'SHIFT':'MOD_SHIFT_LEFT',
     'CTRL':'MOD_CONTROL_LEFT',
-    'CONTROL':'MOD_CONTROL_LEFT'
+    'CONTROL':'MOD_CONTROL_LEFT',
+    'GUI':'MOD_GUI_LEFT',
+    'WINDOWS':'MOD_GUI_LEFT',
+    'COMMAND':'MOD_GUI_LEFT'
     }
 keyMap = {
     'a':'a',
@@ -82,6 +81,65 @@ keyMap = {
     'y':'y',
     'z':'z'
 }
+
+simpleKeysMap = {
+    'a':'KEY_A',
+    'b':'KEY_B',
+    'c':'KEY_C',
+    'd':'KEY_D',
+    'e':'KEY_E',
+    'f':'KEY_F',
+    'g':'KEY_G',
+    'h':'KEY_H',
+    'i':'KEY_I',
+    'j':'KEY_J',
+    'k':'KEY_K',
+    'l':'KEY_L',
+    'm':'KEY_M',
+    'n':'KEY_N',
+    'o':'KEY_O',
+    'p':'KEY_P',
+    'q':'KEY_Q',
+    'r':'KEY_R',
+    's':'KEY_S',
+    't':'KEY_T',
+    'u':'KEY_U',
+    'v':'KEY_V',
+    'w':'KEY_W',
+    'x':'KEY_X',
+    'y':'KEY_Y',
+    'z':'KEY_Z',
+    'A':'KEY_A',
+    'B':'KEY_B',
+    'C':'KEY_C',
+    'D':'KEY_D',
+    'E':'KEY_E',
+    'F':'KEY_F',
+    'G':'KEY_G',
+    'H':'KEY_H',
+    'I':'KEY_I',
+    'J':'KEY_J',
+    'K':'KEY_K',
+    'L':'KEY_L',
+    'M':'KEY_M',
+    'N':'KEY_N',
+    'O':'KEY_O',
+    'P':'KEY_P',
+    'Q':'KEY_Q',
+    'R':'KEY_R',
+    'S':'KEY_S',
+    'T':'KEY_T',
+    'U':'KEY_U',
+    'V':'KEY_V',
+    'W':'KEY_W',
+    'X':'KEY_X',
+    'Y':'KEY_Y',
+    'Z':'KEY_Z'
+}
+
+allMaps = commandMap.copy()
+allMaps.update(comboMap)
+allMaps.update(simpleKeysMap)
 
 def translateString(s,kb_layout):
     d = kb_layout_dict[kb_layout]
@@ -237,26 +295,28 @@ def _parse(toParse,kb_layout):
                         commandKnown = False
                     wordArray.pop(0)
                 elif (len(wordArray) == 2) and wordArray[0] in comboMap:
-                    parsedOut = '    DigiKeyboard.sendKeyStroke(' + commandMap[wordArray[1]] + ',' + comboMap[wordArray[0]] + ');\n'
+                    parsedOut = '    DigiKeyboard.sendKeyStroke(' + allMaps[wordArray[1]] + ',' + comboMap[wordArray[0]] + ');\n'
                     wordArray.pop(0)
                     wordArray.pop(0)
                     commandKnown = True
                 else:
+                    i=0
                     for word in wordArray:
-                        if wordArray[0] in comboMap:
+                        if wordArray[i] in comboMap:
                             commandKnown = True
                             releaseAll = True
-                            parsedOut += '    DigiKeyboard.sendKeyPress(' + comboMap[wordArray[0]] + ');\n'
-                        elif wordArray[0] in commandMap:
+                            parsedOut += '    DigiKeyboard.sendKeyPress(' + comboMap[wordArray[i]] + ');\n'
+                        elif wordArray[i] in commandMap:
                             commandKnown = True
                             releaseAll = True
-                            parsedOut += '    DigiKeyboard.sendKeyPress(' + commandMap[wordArray[0]] + ');\n'
-                        elif wordArray[0] in keyMap:
+                            parsedOut += '    DigiKeyboard.sendKeyPress(' + commandMap[wordArray[i]] + ');\n'
+                        elif wordArray[i] in keyMap:
                             commandKnown = True
                             releaseAll = True
-                            parsedOut += '    DigiKeyboard.sendKeyPress(\'' + keyMap[wordArray[0]] + '\');\n'
+                            parsedOut += '    DigiKeyboard.sendKeyPress(\'' + keyMap[wordArray[i]] + '\');\n'
                         else:
                             commandKnown = False
+                        i=i+1
 
             if not commandKnown:
                 print 'Error: Unknown command or key \'%s\' at line: %d.' % wordArray[0],(i + 1)
