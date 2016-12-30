@@ -7,6 +7,31 @@ kb_layout_dict = {
 'EN':{'a':'a'}
 }
 
+# --------------
+# PT Translation
+# --------------
+# / => &
+# & => ^
+# - => /
+# ( => *
+# ) => ( 
+# = => ) 
+# ? => _ 
+# + => [ 
+# * => { 
+# \ => `
+# | => ~
+# " => @
+# < => \
+# > => |
+
+keyboard_translation = {
+'PT':{u'\u002F':u'\u0026',u'\u0026':u'\u005E',u'\u002D':u'\u002F',u'\u0028':u'\u002A',u'\u0029':u'\u0028',u'\u003D':u'\u0029',u'\u003F':u'\u005F',u'\u002B':u'\u005B',u'\u002A':u'\u007B',u'\u005C':u'\u0060',u'\u007C':u'\u007E',u'\u0022':u'\u0040',u'\u003C':u'\u005C',u'\u003E':u'\u007C'},
+'US':{'a':'a'},
+'EN':{'a':'a'},
+}
+
+
 commandMap = {
     'ESCAPE':'KEY_LEFT_ESC',
     'ESC':'KEY_LEFT_ESC',
@@ -141,10 +166,15 @@ allMaps = commandMap.copy()
 allMaps.update(comboMap)
 allMaps.update(simpleKeysMap)
 
-def translateString(s,kb_layout):
+def old_translateString(s,kb_layout):
     d = kb_layout_dict[kb_layout]
     pattern = re.compile('|'.join(d.keys()))
     return pattern.sub(lambda x: d[x.group()], s)
+
+def translateString(s,kb_layout):
+    translation_map = keyboard_translation[kb_layout]
+    return ''.join(translation_map.get(ch, ch) for ch in s)
+
 
 def _parse(toParse,kb_layout):
     timerStart = int(round(time.time() * 1000))
